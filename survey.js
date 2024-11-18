@@ -5,16 +5,16 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-rl.question("What's your name? Nicknames are also acceptable :) ", (name) => {
-  console.log(`My name is ${name}`);
-  rl.question("What's an activity you like doing? ", (activity) => {
-    console.log(`I like to: ${activity}`); 
+rl.question("What's your name? ", (name) => {
+  console.log(`My name is ${name}.`);
+  rl.question("What's a sport you like to play? ", (sport) => {
+    console.log(`I like to play ${sport}.`); 
     rl.question("What do you listen to while doing that? ", (music) => {
-      console.log(`I like to listen to: ${music} while playing ${activity}`); 
-      
-
-
-  rl.close();
+      console.log(`I like to listen to ${music} while playing ${sport}.`); 
+      rl.question("Which meal is your favourite? ", (meal) => {
+        console.log(`My favourite meal is ${meal}.`); 
+        rl.close();
+      });
     });
   }); 
 }); 
